@@ -55,4 +55,8 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = service('session');
     }
+    
+    public function setResponse($data, $status = 200) {
+        return service('response')->setStatusCode($status)->setJSON($data);
+    }
 }
