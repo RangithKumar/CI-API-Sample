@@ -1,2 +1,3 @@
 # CI-API-Sample
-REST API Implementation for CodeIgniter.
+
+REST API Implementation with CodeIgniter & copilot.
