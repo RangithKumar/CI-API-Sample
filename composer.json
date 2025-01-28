@@ -13,8 +13,10 @@
         "php": "^8.1",
         "ext-intl": "*",
         "ext-mbstring": "*",
+        "doctrine/annotations": "*",
         "laminas/laminas-escaper": "^2.14",
-        "psr/log": "^3.0"
+        "psr/log": "^3.0",
+        "zircote/swagger-php": "*"
     },
     "require-dev": {
         "codeigniter/coding-standard": "^1.7",
@@ -23,7 +25,7 @@
         "kint-php/kint": "^6.0",
         "mikey179/vfsstream": "^1.6.12",
         "nexusphp/cs-config": "^3.6",
-        "phpunit/phpunit": "^10.5.16 || ^11.2",
+        "phpunit/phpunit": "*",
         "predis/predis": "^1.1 || ^2.3"
     },
     "suggest": {

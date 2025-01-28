@@ -19,6 +19,9 @@ use Psr\Log\LoggerInterface;
  *
  * For security be sure to declare any new methods as protected or private.
  */
+/**
+ * @OA\Info(title="Sample API", version="0.1")
+ */
 abstract class BaseController extends Controller
 {
     /**
@@ -55,8 +58,9 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = service('session');
     }
-    
-    public function setResponse($data, $status = 200) {
+
+    public function setResponse($data, $status = 200)
+    {
         return service('response')->setStatusCode($status)->setJSON($data);
     }
 }

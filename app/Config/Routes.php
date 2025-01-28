@@ -9,6 +9,10 @@ $routes->addRedirect('/', '/api');
 
 $routes->group("api", function ($routes) {
     $routes->group("public", function ($routes) {
+        $routes->group("docs", function ($routes) {
+            $routes->get('/', 'SwagDocGen::index');
+            $routes->get('generate', 'SwagDocGen::generate');
+        });
         $routes->get("/", "API::index");
         $routes->post("sum", "API::sumArray");
         $routes->post("sumAlt", "API::sumAltArray");

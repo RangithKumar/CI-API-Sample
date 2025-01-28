@@ -1,0 +1,227 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Sample API",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/": {
+            "post": {
+                "tags": [
+                    "api / index"
+                ],
+                "summary": "REST API Index.",
+                "description": "REST API Details.",
+                "operationId": "53ebd56e825f7c947b65f8888e41fd54",
+                "responses": {
+                    "200": {
+                        "description": "API Details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "app_name": {
+                                            "type": "string",
+                                            "example": "CI Sample API"
+                                        },
+                                        "app_version": {
+                                            "type": "string",
+                                            "example": "0.0.1"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/old": {
+            "post": {
+                "tags": [
+                    "api / indexOld"
+                ],
+                "summary": "REST API IndexOld.",
+                "description": "REST API Details.",
+                "operationId": "c20f2327aff6beebe1dd556c3569e20d",
+                "responses": {
+                    "200": {
+                        "description": "API Details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "app_name": {
+                                            "type": "string",
+                                            "example": "CI Sample API"
+                                        },
+                                        "app_version": {
+                                            "type": "string",
+                                            "example": "0.0.1"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/sum": {
+            "post": {
+                "tags": [
+                    "api / ArraySum"
+                ],
+                "summary": "REST API ArraySum.",
+                "description": "REST API for making sum of array.",
+                "operationId": "2b65c320ff0780742e3ba3df6d88ce16",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "numbers": {
+                                        "description": "array of numbers to sum.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number",
+                                            "example": "[1,2,3,4,5]"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "API Details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "sum": {
+                                            "type": "number",
+                                            "example": 15
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Input."
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "Api-Key": []
+                    }
+                ]
+            }
+        },
+        "/api/sumAlt": {
+            "post": {
+                "tags": [
+                    "api / ArrayOddEvenSums"
+                ],
+                "summary": "REST API Array Odd & Even Sum.",
+                "description": "REST API for making sum of odds & evens in an array.",
+                "operationId": "9d5d8986d980b43a464e1cfaa7656498",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "numbers": {
+                                        "description": "array of numbers to sum.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "number",
+                                            "example": "[1,2,3,4,5]"
+                                        }
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "API Details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "oddSum": {
+                                            "type": "number",
+                                            "example": 9
+                                        },
+                                        "evenSum": {
+                                            "type": "number",
+                                            "example": 6
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Input."
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "Api-Key": []
+                    }
+                ]
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "api / index",
+            "description": "api / index"
+        },
+        {
+            "name": "api / indexOld",
+            "description": "api / indexOld"
+        },
+        {
+            "name": "api / ArraySum",
+            "description": "api / ArraySum"
+        },
+        {
+            "name": "api / ArrayOddEvenSums",
+            "description": "api / ArrayOddEvenSums"
+        }
+    ]
+}
