@@ -9,16 +9,17 @@ use CodeIgniter\Test\DatabaseTestTrait;
 
 class ApiControllerTest extends CIUnitTestCase
 {
-    public $request = new \CodeIgniter\HTTP\IncomingRequest(
-        new \Config\App(),
-        new \CodeIgniter\HTTP\URI(base_url()),
-        new \CodeIgniter\HTTP\Header('Content-Type: application/json, Api-Key: ' . env('API_KEY')),
-        new \CodeIgniter\HTTP\UserAgent(),
-    );
     use ControllerTestTrait;
     public function testArraySum()
     {
-        $result = $this->withRequest($this->request)
+        $request = new \CodeIgniter\HTTP\IncomingRequest(
+            new \Config\App(),
+            new \CodeIgniter\HTTP\URI(base_url()),
+            new \CodeIgniter\HTTP\Header('Content-Type: application/json, Api-Key: ' . env('API_KEY')),
+            new \CodeIgniter\HTTP\UserAgent(),
+            new \CodeIgniter\HTTP\Message(['numbers' => [1, 2, 3, 4, 5]]),
+        );
+        $result = $this->withRequest($request)
             ->withUri(base_url() . 'categories')
             ->controller(Api::class)
             ->execute('sumArray');
