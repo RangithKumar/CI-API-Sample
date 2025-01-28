@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Swagger UI</title>
+    <title>Swagger UI - Sample API</title>
     <link rel="stylesheet" type="text/css" href="<?= base_url('swagger/swagger-ui.css') ?>" />
     <link rel="stylesheet" type="text/css" href="<?= base_url('swagger/index.css') ?>" />
     <link rel="icon" type="image/png" href="<?= base_url('swagger/favicon-32x32.png') ?>" sizes="32x32" />

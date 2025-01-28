@@ -65,8 +65,8 @@ class Api extends BaseController
     public function index()
     {
         return $this->setResponse([
-            'app_name' => getenv('APP_NAME'),
-            'app_version' => getenv('APP_VERSION')
+            'app_name' => env('APP_NAME'),
+            'app_version' => env('APP_VERSION')
         ]);
     }
 
