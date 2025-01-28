@@ -20,7 +20,7 @@ class Api extends BaseController {
         if (!$this->validateData($input, $rules)) {
             // The validation failed.
             return $this->setResponse([
-                'status' => 'failed', 
+                'status' => 'failed',
                 'errors' => $this->validator->getErrors(),
             ], 400);
         }
@@ -32,7 +32,7 @@ class Api extends BaseController {
         if (!$this->validateData($input, $rules)) {
             // The validation failed.
             return $this->setResponse([
-                'status' => 'failed', 
+                'status' => 'failed',
                 'errors' => $this->validator->getErrors(),
             ], 400);
         }

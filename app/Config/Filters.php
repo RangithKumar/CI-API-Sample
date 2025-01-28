@@ -34,6 +34,7 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'apiKeyAuthFilter' => \App\Filters\ApiKeyAuthFilter::class,
     ];
 
     /**
@@ -69,6 +70,7 @@ class Filters extends BaseFilters
      */
     public array $globals = [
         'before' => [
+            'apiKeyAuthFilter' => ['except' => 'api/public/*'],
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
