@@ -13,37 +13,6 @@ class Api extends BaseController
 {
     /**
      * @OA\Post(
-     *     path="/api/",
-     *     tags={"api / index"},
-     *     summary="REST API Index.",
-     *     description="REST API Details.",
-     *     @OA\Response(
-     *         response=200,
-     *         description="API Details",
-     *         @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(
-     *                 property="app_name",
-     *                 type="string",
-     *                 example="CI Sample API"
-     *             ),
-     *             @OA\Property(
-     *                 property="app_version",
-     *                 type="string",
-     *                 example="0.0.1"
-     *             )
-     *         )
-     *     ),
-     *     @OA\Response(response=404, description="Resource Not Found"),
-     * )
-     */
-    public function indexOld()
-    {
-        return view('welcome_message');
-    }
-
-    /**
-     * @OA\Post(
      *     path="/api/old",
      *     tags={"api / indexOld"},
      *     summary="REST API IndexOld.",
