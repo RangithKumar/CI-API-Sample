@@ -1,5 +1,6 @@
 */config/development
 */logs/log-*.php
+*/logs/log-*.log
 */debugbar/debugbar_*.json
 !*/logs/index.html
 */cache/*
@@ -19,3 +20,7 @@ application/logs/*
 /vendor/
 
 .env
+/coverage-report
+/build/logs
+/build/.phpunit.cache
+/old_test
