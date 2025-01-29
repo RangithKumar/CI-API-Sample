@@ -24,13 +24,14 @@ class ApiKeyAuthFilter implements FilterInterface
      *
      * @return RequestInterface|ResponseInterface|string|void
      */
-    public function before(RequestInterface $request, $arguments = null) {
+    public function before(RequestInterface $request, $arguments = null)
+    {
         $isAuth = false;
         // check Api-Key header available & match with env variable API_KEY
-        if($request->hasHeader('Api-Key')) {
-            $isAuth = $request->getHeaderLine('Api-Key') == getenv('API_KEY');
+        if ($request->hasHeader('Api-Key')) {
+            $isAuth = $request->getHeaderLine('Api-Key') == env('API_KEY');
         }
-        if(!$isAuth) {
+        if (!$isAuth) {
             return service('response')->setStatusCode(401)->setJSON([
                 'status' => 401,
                 'message' => 'Missing or invalid Api-Key in request.',

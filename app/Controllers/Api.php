@@ -2,9 +2,15 @@
 
 namespace App\Controllers;
 
+/**
+ * Class Api
+ *
+ * This class handles the API endpoints for the application.
+ *
+ * @package App\Controllers
+ */
 class Api extends BaseController
 {
-
     /**
      * @OA\Post(
      *     path="/api/",
@@ -124,7 +130,7 @@ class Api extends BaseController
                 'errors' => $this->validator->getErrors(),
             ], 400);
         }
-        return $this->setResponse(['status' => 'success', 'sum' => array_sum($input['numbers'])], 200);
+        return $this->setResponse(['status' => 'success', 'sum' => array_sum($input['numbers'])]);
     }
 
     /**
@@ -183,7 +189,7 @@ class Api extends BaseController
             // The validation failed.
             return $this->setResponse([
                 'status' => 'failed',
-                'errors' => $this->validator->getErrors(),
+                'errors' => $this->validator->getErrors()
             ], 400);
         }
         $oddArr = array_filter($input['numbers'], function ($num) {
@@ -196,6 +202,6 @@ class Api extends BaseController
             'status' => 'success',
             'oddSum' => array_sum($oddArr),
             'eveSum' => array_sum($eveArr)
-        ], 200);
+        ]);
     }
 }

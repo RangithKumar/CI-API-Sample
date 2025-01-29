@@ -61,6 +61,9 @@ abstract class BaseController extends Controller
 
     public function setResponse($data, $status = 200)
     {
-        return service('response')->setStatusCode($status)->setJSON($data);
+        return $this->response
+            ->setStatusCode($status)
+            ->setContentType('application/json')
+            ->setJSON($data);
     }
 }
